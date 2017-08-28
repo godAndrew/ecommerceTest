@@ -123,7 +123,8 @@ STATIC_URL = '/static/'
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  db_from_env
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PROTO', 'https')
 
@@ -131,8 +132,6 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
